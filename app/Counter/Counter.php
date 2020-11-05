@@ -6,7 +6,7 @@ class Counter{
 
     private $count = 0;
 
-    public function increment() : Counter
+    public function increment() : self
     {
         $this->count += 1;    
         return $this;

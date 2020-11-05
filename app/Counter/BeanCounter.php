@@ -12,7 +12,7 @@ class BeanCounter
         $this->beanCounter = $beanCounter;
     } 
 
-    public function addBean() : BeanCounter
+    public function addBean() : self
     {
         $this->beanCounter->increment();
         //as counter is an object instance of type Counter we can access the increment method
