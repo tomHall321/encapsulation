@@ -7,7 +7,7 @@ class BeanCounter
     private $beanCounter;
 
     public function __construct(Counter $beanCounter) 
-    //the new object instance is of type Counter)
+    //the new object instance is of type Counter
     {
         $this->beanCounter = $beanCounter;
     } 
@@ -15,13 +15,13 @@ class BeanCounter
     public function addBean() : self
     {
         $this->beanCounter->increment();
-        //as counter is an object instance of type Counter we can access the increment method
+        //as counter is an object instance of type Counter can access the increment method
         return $this;
     }
 
     public function howMany() : int
     {
         return $this->beanCounter->count();
-        //as counter is an object instance of type Counter we can access the count method
+        //as counter is an object instance of type Counter can access the count method
     }
 }
