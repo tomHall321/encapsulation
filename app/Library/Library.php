@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 namespace App\Library;
 
 
@@ -20,13 +20,9 @@ class Library
 
     public function titles() : array
     {
-        $arrayOfTitleArrays = $this->shelves->map(fn($shelf)=> $shelf->titles());
-        $oneArray = [];
-        foreach($arrayOfTitleArrays as $shelf) 
-        {
-        $oneArray = array_merge($output, $shelf);
-        }
-        return $oneArray;
+        return $this->shelves->reduce(function ($books, $shelf) {
+            return $books->merge($shelf->titles());
+        }, collect())->all();
 
     }
 }

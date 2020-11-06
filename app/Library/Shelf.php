@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 namespace App\Library;
 
 class Shelf
@@ -20,8 +20,7 @@ class Shelf
     
     public function titles() : array
     {   
-        return $this->books->map(
-            function ($book) 
+        return $this->books->map(function ($book) 
             {
             return $book->title();
         })->all();

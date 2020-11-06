@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 namespace App;
 
 use App\Tricksy\Challenges as Tricksy;
@@ -16,7 +16,7 @@ class Challenges
         // $this->counter(); // 01
         // $this->beanCounter(); // 02
         $shelf = $this->shelf(); // 03
-        // $this->library($shelf); // 04
+        $this->library($shelf); // 04
 
         /* kick-off Tricksy challenges */
 
@@ -62,6 +62,8 @@ class Challenges
         $shelf->addBook(new Library\Book("Zero: The Biography of a Dangerous Idea", 256));
         $shelf->addBook(new Library\Book("The Catcher in the Rye", 277));
         $shelf->addBook(new Library\Book("Stamped from the Beginning", 582));
+
+        // $shelf->addBook(new Counter\BeanCounter(12));
 
         dump($shelf->titles());
         /* [
